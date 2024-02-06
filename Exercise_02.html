@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Water Gun</title>
+</head>
+
+<body>
+    <h1>
+        <center>The Game</center>
+    </h1>
+
+    <script>
+        // Use javascript to create a game of snake, water & gun. The game should ask you to enter S, W or, G. The computer should be able to randomly generate S, W or, G and declare win or loss using alert. Use confirm and prompt whenever required.
+        while (confirm("Do you want to play?")) {
+            let round = prompt("Enter how many rounds you wanna play :");
+            let computerPoint = 0, userPoint = 0;
+            for (let i = 1; i <= round; i++) {
+                let userChoice = prompt("'S' for Snake\n'W' for Water\n'G' for Gun\n\tEnter your choice :");
+                if (userChoice === "S")
+                    userChoice = "Snake";
+                else if (userChoice === "W")
+                    userChoice = "Water";
+                else if (userChoice === "G")
+                    userChoice = "Gun";
+
+                function generateRandomChoice() {
+                    const characters = ["Snake", "Water", "Gun"];
+                    const randomIndex = Math.floor(Math.random() * characters.length);
+                    return characters[randomIndex];
+                }
+
+                let computerChoice = generateRandomChoice();
+
+                if (userChoice === "Snake" && computerChoice === "Water") {
+                    alert("User's Choice :  " + userChoice + "\nComputer's Choice :  " + computerChoice + "\n\tYou WON The Round-" + i);
+                    userPoint += 1;
+                }
+                else if (userChoice === "Snake" && computerChoice === "Gun") {
+                    alert("User's Choice :  " + userChoice + "\nComputer's Choice :  " + computerChoice + "\n\tYou LOSS The Round-" + i);
+                    computerPoint += 1;
+                }
+                else if (userChoice === "Water" && computerChoice === "Snake") {
+                    alert("User's Choice :  " + userChoice + "\nComputer's Choice :  " + computerChoice + "\n\tYou LOSS The Round-" + i);
+                    computerPoint += 1;
+                }
+                else if (userChoice === "Water" && computerChoice === "Gun") {
+                    alert("User's Choice :  " + userChoice + "\nComputer's Choice :  " + computerChoice + "\n\tYou WON The Round-" + i);
+                    userPoint += 1;
+                }
+                else if (userChoice === "Gun" && computerChoice === "Snake") {
+                    alert("User's Choice :  " + userChoice + "\nComputer's Choice :  " + computerChoice + "\n\tYou WON The Round-" + i);
+                    userPoint += 1;
+                }
+                else if (userChoice === "Gun" && computerChoice === "Water") {
+                    alert("User's Choice :  " + userChoice + "\nComputer's Choice :  " + computerChoice + "\n\tYou LOSS The Round-" + i);
+                    computerPoint += 1;
+                }
+                else if (userChoice === computerChoice) {
+                    alert("User's Choice :  " + userChoice + "\nComputer's Choice :  " + computerChoice + "\n\tRound-" + i + " DISMISSED.");
+                    i -= 1;
+                }
+                else {
+                    alert("User's Choice :  " + userChoice + "\nComputer's Choice :  " + computerChoice + "\n\tINVALID CHOICE!!!");
+                    i -= 1;
+                }
+            }
+            if (computerPoint > userPoint)
+                alert("User's Point :  " + userPoint + "\nComputer's Point :  " + computerPoint + "\n\tYou LOSS The Match");
+            else if (computerPoint < userPoint)
+                alert("User's Point :  " + userPoint + "\nComputer's Point :  " + computerPoint + "\n\tYou WON The Match");
+            if (computerPoint === userPoint)
+                alert("User's Point :  " + userPoint + "\nComputer's Point :  " + computerPoint + "\n\tMatch Draw!!!");
+        }
+    </script>
+</body>
+
+</html>
