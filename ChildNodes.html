@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Nodes</title>
+</head>
+
+<body>
+    <div>
+        <h1>
+            <center>!!! Hello World !!!</center>
+        </h1>
+        <p>
+            <center>-: Welcome to Virtuality :-</center>
+        </p>
+    </div>
+
+    <script>
+        console.log(document.body.firstChild);
+        console.log(document.body.childNodes[0]);
+        console.log(document.body.lastChild);
+        console.log(document.body.childNodes[document.body.childNodes.length - 1]);
+        console.log(document.body.childNodes);
+        console.log(Array.from(document.body.childNodes));
+    </script>
+</body>
+
+</html>
