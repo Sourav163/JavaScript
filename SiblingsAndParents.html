@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siblings and Parents</title>
+</head>
+
+<body>
+    <div>
+        <h1>
+            <center>Siblings and Parents</center>
+        </h1>
+        <p>
+            <center>This is about sibling and parent nodes and elements.</center>
+        </p>
+    </div>
+
+    <script>
+        console.log(document.documentElement.parentNode);
+        console.log(document.documentElement.parentElement);
+        console.log(document.body.firstChild);
+        console.log(document.body.firstChild.nextSibling);
+        console.log(document.body.lastChild);
+        console.log(document.body.lastChild.previousSibling);
+    </script>
+</body>
+
+</html>
