@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Only Navigation</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>
+            <center>I am the Coder Guy :)</center>
+        </h1>
+    </section>
+
+    <script>
+        console.log("Document Body 1st Child -  ", document.body.firstChild);
+        console.log("Document Body 1st Element Child -  ", document.body.firstElementChild);
+        console.log("Document Body 1st-last-1st-last-prevElemSibling Element Child -  ", document.body.firstElementChild.lastElementChild.firstElementChild.lastElementChild.previousElementSibling);
+        console.log("Child Nodes of HTML body :  ", document.body.children);
+    </script>
+</body>
+
+</html>
