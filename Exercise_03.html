@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tell Me A Joke</title>
+</head>
+
+<body>
+    <h1>
+        <center>&#128514;</center>
+    </h1>
+    <center>
+        <div id="joke"></div>
+    </center>
+
+    <script>
+        // elem.innerHTML is used to populate a div with HTML. Search online about this method and create a website with a div tag containing a random joke given an array of jokes. Use Math.random and fetch jokes from the internet (Use any Website to create the array). Your website should show a random joke on every reload. Minimum length of your jokes array should be 10.
+        const jokes = [
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "Parallel lines have so much in common. It's a shame they'll never meet.",
+            "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+            "I'm reading a book on anti-gravity. It's impossible to put down!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "What do you call fake spaghetti? An impasta!",
+            "Why don't skeletons fight each other? They don't have the guts.",
+            "Why did the math book look sad? Because it had too many problems.",
+            "I'm reading a book about anti-gravity. It's really uplifting!",
+            "Why did the bicycle fall over? Because it was two-tired!",
+            "What's orange and sounds like a parrot? A carrot!",
+            "I used to play piano by ear, but now I use my hands.",
+            "Why couldn't the bicycle stand up by itself? It was two-tired!",
+            "I told my computer I needed a break, and now it won't stop sending me vacation ads.",
+            "What did one plate say to the other plate? Dinner's on me!",
+            "Why did the tomato turn red? Because it saw the salad dressing!",
+            "Why did the golfer bring two pairs of pants? In case he got a hole in one!",
+            "Why don't skeletons fight each other? They don't have the guts!",
+            "I told my wife she was drawing her eyebrows too high. She looked surprised!",
+            "I'm trying to organize a hide and seek competition, but it's really hard to find good players – they're always hiding!",
+            "What's a skeleton's least favorite room in the house? The living room!",
+            "What did the janitor say when he jumped out of the closet? Supplies!",
+            "Why was the math book sad? Because it had too many problems!",
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "What do you get when you cross a snowman and a vampire? Frostbite!",
+            "I'm reading a book on anti-gravity. It's impossible to put down!",
+            "Why did the bicycle fall over? Because it was two-tired!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "Parallel lines have so much in common. It's a shame they'll never meet.",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "What do you call a bear with no teeth? A gummy bear!",
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "Why don't skeletons fight each other? They don't have the guts!",
+            "What do you call fake spaghetti? An impasta!",
+            "What's orange and sounds like a parrot? A carrot!",
+            "Why did the math book look sad? Because it had too many problems!",
+            "I'm reading a book about anti-gravity. It's really uplifting!",
+            "Why did the bicycle fall over? Because it was two-tired!",
+            "I told my computer I needed a break, and now it won't stop sending me vacation ads.",
+            "What did one plate say to the other plate? Dinner's on me!",
+            "Why did the tomato turn red? Because it saw the salad dressing!",
+            "Why did the golfer bring two pairs of pants? In case he got a hole in one!",
+            "Why don't skeletons fight each other? They don't have the guts!",
+            "I told my wife she was drawing her eyebrows too high. She looked surprised!",
+            "I'm trying to organize a hide and seek competition, but it's really hard to find good players – they're always hiding!",
+            "What's a skeleton's least favorite room in the house? The living room!",
+            "What did the janitor say when he jumped out of the closet? Supplies!",
+            "Why was the math book sad? Because it had too many problems!",
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "What do you get when you cross a snowman and a vampire? Frostbite!",
+            "I'm reading a book on anti-gravity. It's impossible to put down!",
+            "Why did the bicycle fall over? Because it was two-tired!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "Parallel lines have so much in common. It's a shame they'll never meet!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "What do you call a bear with no teeth? A gummy bear!",
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "Why don't skeletons fight each other? They don't have the guts!",
+            "What do you call fake spaghetti? An impasta!",
+            "What's orange and sounds like a parrot? A carrot!",
+            "Why did the math book look sad? Because it had too many problems!",
+            "I'm reading a book about anti-gravity. It's really uplifting!",
+            "Why did the bicycle fall over? Because it was two-tired!",
+            "I told my computer I needed a break, and now it won't stop sending me vacation ads.",
+            "What did one plate say to the other plate? Dinner's on me!",
+            "Why did the tomato turn red? Because it saw the salad dressing!",
+            "Why did the golfer bring two pairs of pants? In case he got a hole in one!",
+            "Why don't skeletons fight each other? They don't have the guts!",
+            "I told my wife she was drawing her eyebrows too high. She looked surprised!",
+            "I'm trying to organize a hide and seek competition, but it's really hard to find good players – they're always hiding!",
+            "What's a skeleton's least favorite room in the house? The living room!",
+            "What did the janitor say when he jumped out of the closet? Supplies!",
+            "Why was the math book sad? Because it had too many problems!",
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "What do you get when you cross a snowman and a vampire? Frostbite!",
+            "I'm reading a book on anti-gravity. It's impossible to put down!",
+            "Why did the bicycle fall over? Because it was two-tired!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "Parallel lines have so much in common. It's a shame they'll never meet!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "What do you call a bear with no teeth? A gummy bear!",
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "Why don't skeletons fight each other? They don't have the guts!",
+            "What do you call fake spaghetti? An impasta!",
+            "What's orange and sounds like a parrot? A carrot!",
+            "Why did the math book look sad? Because it had too many problems!",
+            "I'm reading a book about anti-gravity. It's really uplifting!",
+            "Why did the bicycle fall over? Because it was two-tired!",
+            "I told my computer I needed a break, and now it won't stop sending me vacation ads.",
+            "What did one plate say to the other plate? Dinner's on me!",
+            "Why did the tomato turn red? Because it saw the salad dressing!",
+            "Why did the golfer bring two pairs of pants? In case he got a hole in one!",
+            "Why don't skeletons fight each other? They don't have the guts!",
+            "I told my wife she was drawing her eyebrows too high. She looked surprised!",
+            "I'm trying to organize a hide and seek competition, but it's really hard to find good players – they're always hiding!",
+            "What's a skeleton's least favorite room in the house? The living room!",
+            "What did the janitor say when he jumped out of the closet? Supplies!",
+            "Why was the math book sad? Because it had too many problems!",
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "What do you get when you cross a snowman and a vampire? Frostbite!",
+        ];
+
+        let randomIndex = Math.floor(Math.random() * jokes.length);
+        console.log(randomIndex);
+        let joke = document.getElementById("joke");
+        joke.innerHTML = jokes[randomIndex];
+        // joke.innerHTML()
+    </script>
+</body>
+
+</html>
