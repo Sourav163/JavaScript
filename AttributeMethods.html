@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Methods</title>
+</head>
+
+<body>
+    <div id="line" class="sentence" data-game="gta" data-player="sourav">I am line.</div>
+
+    <script>
+        let line = document.getElementById("line");
+        console.log('line.hasAttribute("class") :  ', line.hasAttribute("class"));
+        console.log('line.getAttribute("class") :  ', line.getAttribute("class"));
+        // line.setAttribute("hidden", "true");
+        line.setAttribute("class", "hello world");
+        // line.removeAttribute("class");
+        console.log("line.attributes :  ", line.attributes);
+        console.log("line.dataset :  ", line.dataset);
+        console.log("line.dataset.game :  ", line.dataset.game);
+        console.log("line.dataset.player :  ", line.dataset.player);
+    </script>
+</body>
+
+</html>
