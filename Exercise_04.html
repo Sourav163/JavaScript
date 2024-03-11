@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiClock</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            font-family: "Madimi One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body {
+            background-color: rgb(247, 255, 192);
+        }
+
+        #digiClock {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #time {
+            font-size: 200px;
+            display: flex;
+        }
+
+        #dt {
+            font-size: 50px;
+            display: flex;
+        }
+
+        .timeDigit {
+            width: 110px;
+        }
+
+        .dateDigit {
+            width: 28px;
+        }
+
+        .timeDigit,
+        .colon,
+        .dateDigit,
+        .dash {
+            color: rgb(0, 0, 100);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Create a digital seconds clock using setInterval and Date object in JS. The Date object can be used to get the date, time, hours and seconds which can be updated using setInterval. Try to keep the UI good looking. -->
+    <div id="digiClock">
+        <div id="time">
+            <div id="hourFirst" class="timeDigit"></div>
+            <div id="hourSecond" class="timeDigit"></div>
+            <div class="colon">&nbsp;:&nbsp;</div>
+            <div id="minuteFirst" class="timeDigit"></div>
+            <div id="minuteSecond" class="timeDigit"></div>
+            <div class="colon">&nbsp;:&nbsp;</div>
+            <div id="secondFirst" class="timeDigit"></div>
+            <div id="secondSecond" class="timeDigit"></div>
+        </div>
+        <div id="dt">
+            <div id="dateFirst" class="dateDigit"></div>
+            <div id="dateSecond" class="dateDigit"></div>
+            <div class="dash">&nbsp;-&nbsp;</div>
+            <div id="monthFirst" class="dateDigit"></div>
+            <div id="monthSecond" class="dateDigit"></div>
+            <div class="dash">&nbsp;-&nbsp;</div>
+            <div id="yearFirst" class="dateDigit"></div>
+            <div id="yearSecond" class="dateDigit"></div>
+            <div id="yearThird" class="dateDigit"></div>
+            <div id="yearFourth" class="dateDigit"></div>
+        </div>
+    </div>
+
+    <script>
+        setInterval(() => {
+            let a = new Date();
+
+            let hour = a.getHours();
+            let minute = a.getMinutes();
+            let second = a.getSeconds();
+            let date = a.getDate();
+            let month = a.getMonth();
+            let year = a.getFullYear();
+
+            if (Math.floor(date / 10) == 0 || Math.floor(month / 10) == 0) {
+                if (Math.floor(date / 10) == 0) {
+                    dateFirst.innerHTML = "0";
+                    dateSecond.innerHTML = date;
+                }
+                else {
+                    dateFirst.innerHTML = Math.floor(date / 10);
+                    dateSecond.innerHTML = date % 10;
+                }
+                if (Math.floor(month / 10) == 0) {
+                    monthFirst.innerHTML = "0";
+                    monthSecond.innerHTML = month;
+                }
+                else {
+                    monthFirst.innerHTML = Math.floor(month / 10);
+                    monthSecond.innerHTML = month % 10;
+                }
+                yearFourth.innerHTML = year % 10;
+                year = Math.floor(year / 10);
+                yearFirst.innerHTML = year % 10;
+                year = Math.floor(year / 10);
+                yearSecond.innerHTML = year % 10;
+                year = Math.floor(year / 10);
+                yearThird.innerHTML = year % 10;
+            }
+            else
+                dt.innerHTML = date + " - " + month + " - " + year;
+
+            if (Math.floor(hour / 10) == 0 || Math.floor(minute / 10) == 0 || Math.floor(second / 10) == 0) {
+                if (Math.floor(hour / 10) == 0) {
+                    hourFirst.innerHTML = "0";
+                    hourSecond.innerHTML = hour;
+                }
+                else {
+                    hourFirst.innerHTML = Math.floor(hour / 10);
+                    hourSecond.innerHTML = hour % 10;
+                }
+                if (Math.floor(minute / 10) == 0) {
+                    minuteFirst.innerHTML = "0";
+                    minuteSecond.innerHTML = minute;
+                }
+                else {
+                    minuteFirst.innerHTML = Math.floor(minute / 10);
+                    minuteSecond.innerHTML = minute % 10;
+                }
+                if (Math.floor(second / 10) == 0) {
+                    secondFirst.innerHTML = "0";
+                    secondSecond.innerHTML = second;
+                }
+                else {
+                    secondFirst.innerHTML = Math.floor(second / 10);
+                    secondSecond.innerHTML = second % 10;
+                }
+            }
+            else
+                time.innerHTML = hour + " : " + minute + " : " + second;
+        }, 1000);
+    </script>
+</body>
+
+</html>
