@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Events</title>
+    <style>
+        * {
+            user-select: none;
+        }
+
+        #hello {
+            width: 100px;
+            border: 2px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="hello" onclick="console.log('clicked');" onmouseenter="console.log('mouse entered');"
+        onmouseout="console.log('mouse out');">
+        Hello World!
+    </div>
+
+    <script>
+        let hello = document.getElementById("hello");
+        hello.onclick = (() => console.log("Hello"));
+    </script>
+</body>
+
+</html>

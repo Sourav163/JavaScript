@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML & outerHTML</title>
+</head>
+
+<body>
+    <div id="container"><!-- Basic innerHTML and outerHTML -->
+        inner<span>HTML</span><b> ...Hello</b>
+    </div>
+    <div id="content" hidden>I am Hidden</div>
+
+    <script>
+        console.log("log & dir (document.body.firstElementChild) :");
+        console.log(document.body.firstElementChild);
+        console.dir(document.body.firstElementChild);
+
+        console.log("document.getElementsByTagName('div') : ", document.getElementsByTagName('div'));
+        console.log("document.body.firstElementChild.nodeName :  ", document.body.firstElementChild.nodeName);
+
+        let container = document.getElementById("container");
+        console.log("container.innerHTML :  ", container.innerHTML);
+        console.log("container.outerHTML :\n\t", container.outerHTML);
+
+        // container.innerHTML = "<i>I am Sourav</i>";
+        // container.outerHTML = "<i>I am Sourav</i>";
+
+        console.log("container.firstChild.data :  ", container.firstChild.data);
+        console.log("container.firstChild.nodeValue :  ", container.firstChild.nodeValue);
+
+        console.log("container.textContent :  ", container.textContent);
+        console.log("container.hidden :  ", container.hidden);
+
+        let content = document.getElementById("content");
+        console.log("content.hidden :  ", content.hidden);
+    </script>
+</body>
+
+</html>

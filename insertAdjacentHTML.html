@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertAdjacentHTML</title>
+</head>
+
+<body>
+    <div id="first">First Outer div</div>
+    <div id="middle">
+        <div>First Inner div</div>
+        <div>Middle Inner div</div>
+        <div>Last Inner div</div>
+    </div>
+    <div id="last">Last Outer div</div>
+
+    <script>
+        let middle = document.getElementById("middle");
+
+        middle.insertAdjacentHTML("beforebegin", "<p>beforebegin</p>");
+        middle.insertAdjacentHTML("beforeend", "<p>beforeend</p>");
+        middle.insertAdjacentHTML("afterbegin", "<p>afterbegin</p>");
+        middle.insertAdjacentHTML("afterend", "<p>afterend</p>");
+        middle.remove();
+    </script>
+</body>
+
+</html>

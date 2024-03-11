@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handling Browser Events</title>
+    <style>
+        * {
+            user-select: none;
+        }
+
+        #hello {
+            width: 100px;
+            border: 2px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="hello">
+        Hello World!
+    </div>
+    <button id="btn">Submit</button>
+
+    <script>
+        let hello = document.getElementById("hello");
+        hello.onclick = ((e) => {
+            console.log(e);
+            console.log(e.type);
+            console.log(e.target);
+            console.log(e.currentTarget);
+            console.log(e.clientX);
+            console.log(e.clientY);
+        });
+
+        let btn = document.getElementById("btn");
+        let click = () => {
+            console.log("Clicked");
+        }
+
+        btn.addEventListener('mouseenter', () => {
+            console.log("Mouse Entered");
+        });
+        btn.addEventListener('mouseout', () => {
+            console.log("Mouse Out");
+        });
+
+        btn.addEventListener('click', click);
+        btn.removeEventListener('click', click);
+
+    </script>
+</body>
+
+</html>

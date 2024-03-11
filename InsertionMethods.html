@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion Methods</title>
+</head>
+
+<body>
+    <div id="first">First Outer div</div>
+    <div id="middle">
+        <div>First Inner div</div>
+        <div>Middle Inner div</div>
+        <div>Last Inner div</div>
+    </div>
+    <div id="last">Last Outer div</div>
+
+    <script>
+        let middle = document.getElementById("middle");
+
+        let div = document.createElement("div");
+        div.className = "added";
+        div.innerHTML = "<h1>Hello World</h1>";
+
+        middle.append(div);
+        middle.prepend(div);
+        middle.before(div);
+        middle.after(div);
+        middle.replaceWith(div);
+    </script>
+</body>
+
+</html>

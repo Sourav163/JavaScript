@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout & setInterval</title>
+</head>
+
+<body>
+    <p>Hello World!</p>
+
+    <script>
+        let sum = ((a, b) => console.log(a + b));
+
+        let a = setTimeout(() => {
+            document.write("Oops :(");
+        }, 5000);
+        console.log(a);
+        clearTimeout(a);
+
+        let setTimeoutId = setTimeout(sum, 3000, 5, 10);
+        console.log(setTimeoutId);
+
+        let i = 0;
+        let b = setInterval(() => {
+            console.log("Hello", i);
+            i++;
+        }, 1000);
+        console.log(b);
+        clearInterval(b);
+
+        let setIntervalId = setInterval(sum, 500, 10, 20);
+        console.log(setIntervalId);
+        clearInterval(setIntervalId);
+    </script>
+</body>
+
+</html>

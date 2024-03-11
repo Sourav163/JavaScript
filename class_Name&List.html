@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>className & classList</title>
+    <style>
+        .bgred {
+            background-color: red;
+        }
+
+        .bgyellow {
+            background-color: yellow;
+        }
+
+        .txtblue {
+            color: blue;
+        }
+
+        .txtwhite {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first">First Outer div</div>
+    <div id="middle">
+        <div>First Inner div</div>
+        <div>Middle Inner div</div>
+        <div>Last Inner div</div>
+    </div>
+    <div id="last">Last Outer div</div>
+
+    <script>
+        let first = document.getElementById("first");
+        let middle = document.getElementById("middle");
+        let last = document.getElementById("last");
+
+        first.className = "bgyellow txtblue";
+        middle.className = "bgred txtwhite";
+        last.className = "bgyellow";
+    </script>
+</body>
+
+</html>
